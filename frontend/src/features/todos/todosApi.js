@@ -7,14 +7,6 @@ export const todosApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
   tagTypes: ['Todo'],
   endpoints: (builder) => ({
-    getTodos: builder.query({
-      query: () => '/todos',
-      providesTags: ['Todo'],
-    }),
-    getTodoById: builder.query({
-      query: (id) => `/todos/${id}`,
-      providesTags: (result, error, id) => [{ type: 'Todo', id }],
-    }),
     // adding comments for clarity and conflicts!!
     addTodo: builder.mutation({
       query: (todo) => ({
